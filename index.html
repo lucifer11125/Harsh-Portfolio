@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Harsh Chauhan — Portfolio</title>
+  <meta name="description" content="Harsh Chauhan — Data & Cloud Enthusiast. Projects: Civic Issue Reporter, Health Data IMS. Contact: harshchauhan11125@gmail.com" />
+
+  <style>
+    /* ====== VARIABLES ====== */
+    :root{
+      --bg:#0b0b0c;
+      --card:#0f1315;
+      --muted:#9aa5ad;
+      --text:#e6f0f6;
+      --accent:#00b7ff;           /* Blue theme accent */
+      --accent-2: rgba(0,183,255,0.14);
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+    }
+    .light { --bg:#f6f8fb; --card:#ffffff; --text:#1a1a1a; --muted:#556 ; }
+
+    /* ====== BASE ====== */
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+    a{color:var(--accent); text-decoration:none;}
+    container, main{display:block}
+
+    /* ====== NAVBAR ====== */
+    nav{
+      position:fixed; inset:0 0 auto 0; height:72px; display:flex; align-items:center; justify-content:space-between;
+      padding:12px 28px; z-index:50; backdrop-filter: blur(8px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .brand { font-weight:700; letter-spacing:0.6px; font-size:18px; display:flex; align-items:center; gap:10px;}
+    .navlinks { display:flex; gap:18px; align-items:center; }
+    .navlinks a { color:var(--text); font-weight:500; font-size:14px; padding:8px; border-radius:8px; }
+    .navlinks a:hover{ color:var(--accent); background:var(--accent-2); }
+    #modeBtn{ background:transparent; border:1px solid rgba(255,255,255,0.06); padding:8px 12px; border-radius:8px; color:var(--text); cursor:pointer;}
+    #modeBtn:hover{ background:var(--accent-2); color:var(--accent); border-color:var(--accent); }
+
+    /* ====== LAYOUT ====== */
+    .wrap{ max-width:1100px; margin:110px auto 80px; padding:0 20px; }
+    header{ text-align:center; margin-bottom:28px; }
+    h1{ font-size:34px; margin:0 0 6px; letter-spacing:0.4px; }
+    .sub{ color:var(--muted); font-size:14px; margin-bottom:10px; }
+    .contact-inline{ margin-top:8px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; color:var(--muted); font-size:14px; }
+    .contact-inline a{ color:var(--accent); font-weight:600; }
+
+    /* ====== SKILLS GRID ====== */
+    .skills-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; margin:22px 0 30px; }
+    .badge{
+      display:inline-block; padding:10px 12px; border-radius:999px; font-weight:600; font-size:13px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      color:var(--text);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    .badge:hover{ transform:translateY(-6px); box-shadow: 0 18px 40px rgba(0,183,255,0.12); border-color:var(--accent); }
+
+    /* ====== PROJECT CARDS (3D tilt) ====== */
+    .projects { display:grid; gap:18px; grid-template-columns:1fr; margin-bottom:28px; }
+    @media(min-width:900px){ .projects{ grid-template-columns: repeat(2, 1fr); } }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius); padding:18px; position:relative; overflow:hidden;
+      border:1px solid rgba(255,255,255,0.04); transform-style:preserve-3d; transition: transform .25s cubic-bezier(.2,.9,.3,1), box-shadow .25s;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      cursor:grab;
+    }
+    .card .title{ font-weight:700; margin-bottom:8px; font-size:16px;}
+    .card p{ color:var(--muted); margin-bottom:12px; line-height:1.45; font-size:14px; }
+    .card .tools{ display:flex; gap:8px; flex-wrap:wrap; }
+    .pill{ font-size:12px; padding:6px 9px; border-radius:8px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03); color:var(--text); }
+
+    .card:after{
+      content:''; position:absolute; inset:0; pointer-events:none; background: linear-gradient(180deg, rgba(0,183,255,0.06), rgba(0,183,255,0.00)); mix-blend-mode:overlay; opacity:0; transition:opacity .3s;
+    }
+    .card:hover{ transform: translateY(-8px) rotateX(2deg) rotateY(-2deg) scale(1.015); box-shadow: 0 28px 60px rgba(0,183,255,0.12); }
+    .card:hover:after{ opacity:1; }
+
+    /* 3D glow element */
+    .glow {
+      position:absolute; width:220px; height:220px; right:-60px; top:-60px; filter:blur(48px); opacity:0.6;
+      background: radial-gradient(circle at 30% 30%, rgba(0,183,255,0.28), rgba(0,183,255,0.12), transparent 40%);
+      transform:translateZ(-1px);
+      pointer-events:none;
+    }
+
+    /* ====== CURSOR (NEON) ====== */
+    .cursor {
+      position:fixed; left:0; top:0; width:18px; height:18px; border-radius:50%;
+      background:transparent; border:2px solid var(--accent); transform:translate(-50%,-50%);
+      pointer-events:none; z-index:9999; mix-blend-mode:screen;
+      transition: width .12s ease, height .12s ease, opacity .12s ease, transform .08s ease;
+      box-shadow: 0 0 18px rgba(0,183,255,0.28);
+    }
+    .cursor.big{ width:44px; height:44px; border-width:2px; box-shadow: 0 0 28px rgba(0,183,255,0.34); background: linear-gradient(180deg, rgba(0,183,255,0.06), rgba(0,183,255,0.02)); }
+
+    /* ====== CONTACT FORM ====== */
+    .contact-form{ max-width:700px; margin: 10px auto 40px; display:flex; flex-direction:column; gap:8px; }
+    input[type="text"], input[type="email"], textarea {
+      padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--text); outline:none;
+    }
+    textarea{ min-height:120px; resize:vertical; }
+    .btn { display:inline-block; background:var(--accent); color:#001; padding:10px 14px; border-radius:10px; font-weight:700; border:none; cursor:pointer; }
+    .meta { font-size:13px; color:var(--muted); margin-top:6px; }
+
+    /* ====== FOOTER ====== */
+    footer{ text-align:center; padding:28px 18px; color:var(--muted); border-top:1px solid rgba(255,255,255,0.03); margin-top:40px; }
+
+    /* ====== SMALLER SCREEN ADJUST ====== */
+    @media(max-width:600px){
+      nav{ padding:10px 14px; }
+      .wrap{ margin-top:86px; }
+      header h1{ font-size:22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="brand">HARSH CHAUHAN</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div style="display:flex; gap:12px; align-items:center;">
+      <button id="modeBtn" title="Toggle light / dark">Toggle</button>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <!-- HEADER -->
+    <header id="about">
+      <h1>HARSH CHAUHAN</h1>
+      <div class="sub">Computer Science • Big Data & Cloud Engineering</div>
+      <div class="contact-inline">
+        <a href="tel:+917058887901">+91 7058887901</a>
+        <span style="color:var(--muted)">|</span>
+        <a href="mailto:harshchauhan11125@gmail.com">harshchauhan11125@gmail.com</a>
+        <span style="color:var(--muted)">|</span>
+        <a href="https://linkedin.com/in/harsh-chauhan-0439a6307" target="_blank" rel="noopener">LinkedIn</a>
+        <span style="color:var(--muted)">|</span>
+        <a href="https://github.com/lucifer11125" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </header>
+
+    <!-- SKILLS -->
+    <section id="skills" class="fadein">
+      <h2>SKILLS</h2>
+      <div class="skills-grid">
+        <div class="badge">Python</div>
+        <div class="badge">SQL</div>
+        <div class="badge">Power BI</div>
+        <div class="badge">MySQL</div>
+        <div class="badge">Jupyter Notebook</div>
+        <div class="badge">Excel</div>
+        <div class="badge">TensorFlow</div>
+        <div class="badge">Scikit-learn</div>
+        <div class="badge">AWS (Basics)</div>
+        <div class="badge">Data Modelling</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="fadein">
+      <h2>PROJECTS</h2>
+      <div class="projects">
+        <div class="card" data-tilt data-tilt-scale="1.02">
+          <div class="glow" aria-hidden="true"></div>
+          <div class="title">Crowd-Source Civic Issue Reporting & Resolution System</div>
+          <p>Developed a citizen-centric system to report civic issues (potholes, garbage dumping, water leakage). Designed workflow for submission → verification → assignment → resolution, with location-tagging and admin dashboards.</p>
+          <div class="tools">
+            <span class="pill">Python</span>
+            <span class="pill">Flask</span>
+            <span class="pill">SQL</span>
+            <span class="pill">HTML/CSS</span>
+            <span class="pill">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="card" data-tilt data-tilt-scale="1.02">
+          <div class="glow" aria-hidden="true"></div>
+          <div class="title">Health Data Information Management System</div>
+          <p>Designed a system to analyze patient and hospital datasets across regions, enabling identification of underserved areas and acceleration of data processing by 40%.</p>
+          <div class="tools">
+            <span class="pill">Python</span>
+            <span class="pill">Excel</span>
+            <span class="pill">Kivy</span>
+            <span class="pill">KivyMD</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="fadein">
+      <h2>EXPERIENCE</h2>
+      <div class="card">
+        <div class="title">Data Science Engineer Intern — Prodigy Infotech (Virtual)</div>
+        <p>Dec 2024 – Jan 2025</p>
+        <ul style="color:var(--muted); margin-top:6px;">
+          <li>Cleaned & preprocessed datasets improving readiness by 30%.</li>
+          <li>Performed EDA to derive actionable insights.</li>
+          <li>Built dashboards reducing reporting time by 25%.</li>
+          <li>Prepared ML-ready datasets for training workflows.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="fadein">
+      <h2>CONTACT</h2>
+      <div style="max-width:760px; margin:auto;">
+        <form class="contact-form" action="https://formsubmit.co/harshchauhan11125@gmail.com" method="POST" target="_blank">
+          <!-- formsubmit: _captcha set to false to skip their captcha; optional -->
+          <input type="hidden" name="_captcha" value="false">
+          <!-- optional: redirect to thankyou page after submit -->
+          <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html"> -->
+
+          <input name="name" type="text" placeholder="Your name" required />
+          <input name="email" type="email" placeholder="Your email" required />
+          <input name="subject" type="text" placeholder="Subject" />
+          <textarea name="message" placeholder="Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+          <div class="meta">Or email me directly: <a href="mailto:harshchauhan11125@gmail.com">harshchauhan11125@gmail.com</a></div>
+        </form>
+
+        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="badge" href="https://linkedin.com/in/harsh-chauhan-0439a6307" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="badge" href="https://github.com/lucifer11125" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Harsh Chauhan · Built with ❤️ · Deploy on GitHub Pages / Vercel / Netlify
+    </footer>
+  </main>
+
+  <script>
+    /* ====== MODE TOGGLE ====== */
+    const modeBtn = document.getElementById('modeBtn');
+    modeBtn.onclick = () => {
+      document.body.classList.toggle('light');
+      // store preference
+      localStorage.setItem('site-theme', document.body.classList.contains('light') ? 'light' : 'dark');
+    };
+    // restore
+    if(localStorage.getItem('site-theme') === 'light') document.body.classList.add('light');
+
+    /* ====== CUSTOM CURSOR ====== */
+    const cursor = document.getElementById('cursor');
+    let mouseX = window.innerWidth/2, mouseY = window.innerHeight/2;
+    document.addEventListener('mousemove', (e)=>{
+      mouseX = e.clientX; mouseY = e.clientY;
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top = mouseY + 'px';
+    });
+    // enlarge on interactive elements
+    const interactive = ['a','button','input','textarea','.card','.pill','.badge'];
+    function toggleCursorSize(large){
+      if(large) cursor.classList.add('big'); else cursor.classList.remove('big');
+    }
+    interactive.forEach(sel=>{
+      document.addEventListener('mouseover', e=>{
+        if(e.target.closest(sel)) toggleCursorSize(true);
+      });
+      document.addEventListener('mouseout', e=>{
+        if(e.target.closest(sel)) toggleCursorSize(false);
+      });
+    });
+
+    /* ====== SCROLL REVEAL ====== */
+    const faders = document.querySelectorAll('.fadein');
+    const appearOptions = { threshold: 0.15, rootMargin: "0px 0px -60px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        entry.target.style.opacity = 1;
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(f => appearOnScroll.observe(f));
+
+    /* ====== 3D TILT EFFECT (Vanilla) ====== */
+    const tiltEls = document.querySelectorAll('[data-tilt]');
+    tiltEls.forEach(el=>{
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left; // x position within the element.
+        const y = e.clientY - rect.top;
+        const cx = rect.width/2;
+        const cy = rect.height/2;
+        const dx = (x - cx) / cx;
+        const dy = (y - cy) / cy;
+        const tiltX = (dy * 10); // tilt intensity
+        const tiltY = (dx * -10);
+        el.style.transform = `perspective(900px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(${el.dataset.tiltScale || 1})`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = `perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)`;
+      });
+    });
+
+    /* ====== HELPER: year ====== */
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    /* ====== Accessibility: keyboard focus for cursor interactive elements ====== */
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Tab') cursor.style.opacity = '0.25';
+    });
+    document.addEventListener('click', ()=> cursor.style.opacity = '1');
+
+    /* ====== Optional: small performance throttle for cursor on mobile (hide if touch) ====== */
+    if(('ontouchstart' in window) || navigator.maxTouchPoints > 0) {
+      cursor.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
