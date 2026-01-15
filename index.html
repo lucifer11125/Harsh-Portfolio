@@ -6,12 +6,12 @@
 
 <title>Harsh Chauhan | Data Analyst Portfolio</title>
 
-<meta name="description" content="Harsh Chauhan – Data Analyst skilled in Power BI, SQL, Python, Excel. Built analytics dashboards, customer segmentation models, and data-driven systems."/>
-<meta name="keywords" content="Data Analyst, Power BI, SQL, Python, Data Analytics Portfolio"/>
+<meta name="description" content="Harsh Chauhan – Entry-level Data Analyst skilled in Power BI, SQL, Python, Excel. Experience in dashboards, customer segmentation, sales analytics, and business insights."/>
+<meta name="keywords" content="Data Analyst, Power BI, SQL, Python, Data Analytics Portfolio, Business Intelligence"/>
 <meta name="robots" content="index, follow"/>
 
 <style>
-/* ===== THEME ===== */
+/* ================= THEME ================= */
 :root{
   --bg:#0b0b0c;
   --card:#11161a;
@@ -33,7 +33,7 @@ body{
 
 a{color:var(--accent);text-decoration:none}
 
-/* ===== NAV ===== */
+/* ================= NAV ================= */
 nav{
   position:fixed;
   top:0;left:0;right:0;
@@ -50,16 +50,14 @@ nav{
 .brand{font-weight:800;letter-spacing:.6px}
 .navlinks a{margin-left:18px;font-size:14px}
 
-
-
-/* ===== LAYOUT ===== */
+/* ================= LAYOUT ================= */
 .wrap{max-width:1150px;margin:120px auto 80px;padding:0 20px}
 section{margin-top:60px}
 h1{font-size:36px}
 h2{font-size:26px;margin-bottom:20px}
 .sub{color:var(--muted);max-width:820px}
 
-/* ===== ANIMATIONS ===== */
+/* ================= ANIMATIONS ================= */
 .fade{
   opacity:0;
   transform:translateY(30px);
@@ -67,11 +65,50 @@ h2{font-size:26px;margin-bottom:20px}
 }
 .fade.show{opacity:1;transform:none}
 
-/* ===== BADGES ===== */
-.grid{display:grid;gap:14px}
-.skills,.certs{
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+/* ================= GRID ================= */
+.grid{display:grid;gap:16px}
+.skills,.certs,.projects{
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 }
+
+/* ================= CARDS ================= */
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+  border-radius:var(--radius);
+  padding:22px;
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:0 18px 40px rgba(0,0,0,.5);
+  transition:.35s;
+  position:relative;
+  overflow:hidden;
+}
+
+.card:before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,var(--glow),transparent);
+  opacity:0;
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.02);
+}
+.card:hover:before{opacity:1}
+
+.card h3{margin-top:0}
+
+/* ================= TAGS ================= */
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pill{
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:8px;
+  background:rgba(255,255,255,.05);
+}
+
+/* ================= BADGES ================= */
 .badge{
   padding:12px;
   border-radius:999px;
@@ -87,43 +124,7 @@ h2{font-size:26px;margin-bottom:20px}
   box-shadow:0 0 30px var(--glow);
 }
 
-/* ===== PROJECT CARDS ===== */
-.projects{
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-}
-.card{
-  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
-  border-radius:var(--radius);
-  padding:22px;
-  border:1px solid rgba(255,255,255,.06);
-  box-shadow:0 18px 40px rgba(0,0,0,.5);
-  transition:.35s;
-  position:relative;
-  overflow:hidden;
-}
-.card:before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(120deg,transparent,var(--glow),transparent);
-  opacity:0;
-  transition:.4s;
-}
-.card:hover{
-  transform:translateY(-10px) scale(1.02);
-}
-.card:hover:before{opacity:1}
-
-.card h3{margin-top:0}
-.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.pill{
-  font-size:12px;
-  padding:6px 10px;
-  border-radius:8px;
-  background:rgba(255,255,255,.05);
-}
-
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 footer{
   text-align:center;
   margin-top:80px;
@@ -142,7 +143,6 @@ footer{
     <a href="#projects">Projects</a>
     <a href="#certs">Certifications</a>
     <a href="#contact">Contact</a>
-    <a class="resume-btn" href="Harsh_Chauhan_Data_Analyst_Resume.pdf" download>Download Resume</a>
   </div>
 </nav>
 
@@ -156,95 +156,74 @@ footer{
   </p>
 </header>
 
-<!-- ATS KEYWORDS -->
+<!-- ATS KEYWORDS (Hidden) -->
 <section style="opacity:0;height:0;overflow:hidden">
-Data Analyst, Power BI Analyst, SQL Analyst, Business Intelligence, KPI Dashboards,
+Data Analyst, Business Intelligence, Power BI Analyst, SQL Analyst, KPI Dashboards,
 Customer Segmentation, Sales Analytics, Product Analytics, Data Visualization, EDA
 </section>
 
 <!-- SKILLS -->
-<!-- SKILLS -->
 <section id="skills" class="fade">
-  <h2>Technical Skills</h2>
+<h2>Technical Skills</h2>
+<div class="grid skills">
 
-  <div class="grid skills">
+<div class="card">
+<h3>Programming & Analytics</h3>
+<div class="tools">
+<span class="pill">Python (Pandas, NumPy)</span>
+<span class="pill">C++</span>
+<span class="pill">Java</span>
+<span class="pill">SQL</span>
+</div>
+</div>
 
-    <!-- Programming & Analytics -->
-    <div class="card">
-      <h3>Programming & Analytics</h3>
-      <div class="tools">
-        <span class="pill">Python (Pandas, NumPy)</span>
-        <span class="pill">C++</span>
-        <span class="pill">Java</span>
-        <span class="pill">SQL</span>
-      </div>
-    </div>
+<div class="card">
+<h3>Data Analysis</h3>
+<div class="tools">
+<span class="pill">EDA</span>
+<span class="pill">Data Cleaning</span>
+<span class="pill">Descriptive Statistics</span>
+<span class="pill">Business Insights</span>
+<span class="pill">KPI Analysis</span>
+</div>
+</div>
 
-    <!-- Data Analysis -->
-    <div class="card">
-      <h3>Data Analysis</h3>
-      <div class="tools">
-        <span class="pill">Exploratory Data Analysis (EDA)</span>
-        <span class="pill">Data Cleaning</span>
-        <span class="pill">Descriptive Statistics</span>
-        <span class="pill">Business Insights</span>
-        <span class="pill">KPI Analysis</span>
-      </div>
-    </div>
+<div class="card">
+<h3>Visualization & BI</h3>
+<div class="tools">
+<span class="pill">Power BI</span>
+<span class="pill">Excel</span>
+<span class="pill">Matplotlib</span>
+</div>
+</div>
 
-    <!-- Visualization & BI -->
-    <div class="card">
-      <h3>Visualization & BI</h3>
-      <div class="tools">
-        <span class="pill">Power BI</span>
-        <span class="pill">Excel</span>
-        <span class="pill">Matplotlib</span>
-        <span class="pill">Data Visualization</span>
-      </div>
-    </div>
+<div class="card">
+<h3>Databases</h3>
+<div class="tools">
+<span class="pill">MySQL</span>
+<span class="pill">Relational Databases</span>
+</div>
+</div>
 
-    <!-- Databases -->
-    <div class="card">
-      <h3>Databases</h3>
-      <div class="tools">
-        <span class="pill">MySQL</span>
-        <span class="pill">Relational Databases</span>
-      </div>
-    </div>
+<div class="card">
+<h3>Automation & ETL</h3>
+<div class="tools">
+<span class="pill">ETL Pipelines</span>
+<span class="pill">Data Pipelines</span>
+<span class="pill">Workflow Automation</span>
+</div>
+</div>
 
-    <!-- Automation & ETL -->
-    <div class="card">
-      <h3>Automation & ETL</h3>
-      <div class="tools">
-        <span class="pill">ETL Pipelines</span>
-        <span class="pill">Data Pipelines</span>
-        <span class="pill">Workflow Automation</span>
-      </div>
-    </div>
+<div class="card">
+<h3>AI & Machine Learning</h3>
+<div class="tools">
+<span class="pill">Machine Learning</span>
+<span class="pill">Scikit-learn</span>
+<span class="pill">Model-Ready Data</span>
+</div>
+</div>
 
-    <!-- SQL Expertise -->
-    <div class="card">
-      <h3>SQL Expertise</h3>
-      <div class="tools">
-        <span class="pill">Joins</span>
-        <span class="pill">Aggregations</span>
-        <span class="pill">Subqueries</span>
-        <span class="pill">Data Retrieval</span>
-      </div>
-    </div>
-
-    <!-- AI & ML -->
-    <div class="card">
-      <h3>AI & Machine Learning</h3>
-      <div class="tools">
-        <span class="pill">Machine Learning </span>
-        <span class="pill">Artificial Intelligence</span>
-        <span class="pill">Scikit-learn</span>
-        <span class="pill">Model-Ready Data</span>
-      </div>
-    </div>
-
-  </div>
+</div>
 </section>
 
 <!-- PROJECTS -->
@@ -256,27 +235,31 @@ Customer Segmentation, Sales Analytics, Product Analytics, Data Visualization, E
 <h3>E-Commerce Sales Analytics Dashboard</h3>
 <p>Built a 3-page Power BI dashboard analyzing sales trends, customer segmentation, and product performance using KPIs and slicers.</p>
 <div class="tools">
-<span class="pill">Power BI</span><span class="pill">DAX</span><span class="pill">SQL</span>
-<span class="pill">Impact: Business Insights</span>
+<span class="pill">Power BI</span>
+<span class="pill">DAX</span>
+<span class="pill">SQL</span>
+<span class="pill">Business Insights</span>
 </div>
 <p><a href="https://github.com/lucifer11125" target="_blank">View on GitHub →</a></p>
 </div>
 
 <div class="card">
-<h3>Crowd-Source Civic Issue Reporting System</h3>
-<p>Designed a citizen-centric system for reporting civic issues with workflow automation, location tagging, and admin dashboards.</p>
+<h3>Civic Issue Reporting System</h3>
+<p>Developed a citizen-centric system for reporting civic issues with workflow automation and admin dashboards.</p>
 <div class="tools">
-<span class="pill">Python</span><span class="pill">Flask</span><span class="pill">SQL</span>
-<span class="pill">Impact: Smart Governance</span>
+<span class="pill">Python</span>
+<span class="pill">Flask</span>
+<span class="pill">SQL</span>
 </div>
 </div>
 
 <div class="card">
 <h3>Health Data Information Management System</h3>
-<p>Analyzed healthcare datasets using Python & Excel to identify underserved regions and improved reporting efficiency by 40%.</p>
+<p>Analyzed healthcare datasets to identify underserved regions and improved reporting efficiency by 40%.</p>
 <div class="tools">
-<span class="pill">Python</span><span class="pill">Excel</span><span class="pill">EDA</span>
-<span class="pill">Impact: 40% Efficiency</span>
+<span class="pill">Python</span>
+<span class="pill">Excel</span>
+<span class="pill">EDA</span>
 </div>
 </div>
 
@@ -287,13 +270,13 @@ Customer Segmentation, Sales Analytics, Product Analytics, Data Visualization, E
 <section id="certs" class="fade">
 <h2>Certifications</h2>
 <div class="grid certs">
-  <div class="badge">Accenture – Data Analytics & Visualization</div>
-  <div class="badge">Simplilearn – Power BI</div>
-  <div class="badge">IBM – Python for Data Science</div>
-  <div class="badge">IBM – Exploratory Data Analysis</div>
-  <div class="badge">IBM – Cloud Computing</div>
-  <div class="badge">Duke University – Cloud Data Engineering</div>
-  <div class="badge">Cisco – Networking Basics</div>
+<div class="badge">Accenture – Data Analytics & Visualization</div>
+<div class="badge">Simplilearn – Power BI</div>
+<div class="badge">IBM – Python for Data Science</div>
+<div class="badge">IBM – Exploratory Data Analysis</div>
+<div class="badge">IBM – Cloud Computing</div>
+<div class="badge">Duke University – Cloud Data Engineering</div>
+<div class="badge">Cisco – Networking Basics</div>
 </div>
 </section>
 
@@ -301,8 +284,8 @@ Customer Segmentation, Sales Analytics, Product Analytics, Data Visualization, E
 <section id="contact" class="fade">
 <h2>Contact</h2>
 <p>Email: <a href="mailto:harshchauhan11125@gmail.com">harshchauhan11125@gmail.com</a></p>
-<p>LinkedIn: <a href="https://linkedin.com/in/harsh-chauhan-0439a6307" target="_blank">Profile</a></p>
-<p>GitHub: <a href="https://github.com/lucifer11125" target="_blank">Repositories</a></p>
+<p>LinkedIn: <a href="https://linkedin.com/in/harsh-chauhan-0439a6307" target="_blank">View Profile</a></p>
+<p>GitHub: <a href="https://github.com/lucifer11125" target="_blank">View Projects</a></p>
 </section>
 
 <footer>© 2026 Harsh Chauhan · Data Analyst Portfolio</footer>
@@ -321,4 +304,3 @@ faders.forEach(f=>obs.observe(f));
 
 </body>
 </html>
-
