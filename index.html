@@ -1,306 +1,224 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-
-<title>Harsh Chauhan | Data Analyst Portfolio</title>
-
-<meta name="description" content="Harsh Chauhan – Entry-level Data Analyst skilled in Power BI, SQL, Python, Excel. Experience in dashboards, customer segmentation, sales analytics, and business insights."/>
-<meta name="keywords" content="Data Analyst, Power BI, SQL, Python, Data Analytics Portfolio, Business Intelligence"/>
-<meta name="robots" content="index, follow"/>
-
-<style>
-/* ================= THEME ================= */
-:root{
-  --bg:#0b0b0c;
-  --card:#11161a;
-  --text:#eaf2f7;
-  --muted:#9aa5ad;
-  --accent:#00b7ff;
-  --glow:rgba(0,183,255,.25);
-  --radius:14px;
-}
-
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:var(--bg);
-  color:var(--text);
-  scroll-behavior:smooth;
-}
-
-a{color:var(--accent);text-decoration:none}
-
-/* ================= NAV ================= */
-nav{
-  position:fixed;
-  top:0;left:0;right:0;
-  height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 28px;
-  backdrop-filter:blur(10px);
-  background:rgba(0,0,0,.6);
-  z-index:99;
-}
-
-.brand{font-weight:800;letter-spacing:.6px}
-.navlinks a{margin-left:18px;font-size:14px}
-
-/* ================= LAYOUT ================= */
-.wrap{max-width:1150px;margin:120px auto 80px;padding:0 20px}
-section{margin-top:60px}
-h1{font-size:36px}
-h2{font-size:26px;margin-bottom:20px}
-.sub{color:var(--muted);max-width:820px}
-
-/* ================= ANIMATIONS ================= */
-.fade{
-  opacity:0;
-  transform:translateY(30px);
-  transition:all .8s ease;
-}
-.fade.show{opacity:1;transform:none}
-
-/* ================= GRID ================= */
-.grid{display:grid;gap:16px}
-.skills,.certs,.projects{
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-}
-
-/* ================= CARDS ================= */
-.card{
-  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
-  border-radius:var(--radius);
-  padding:22px;
-  border:1px solid rgba(255,255,255,.06);
-  box-shadow:0 18px 40px rgba(0,0,0,.5);
-  transition:.35s;
-  position:relative;
-  overflow:hidden;
-}
-
-.card:before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(120deg,transparent,var(--glow),transparent);
-  opacity:0;
-  transition:.4s;
-}
-
-.card:hover{
-  transform:translateY(-10px) scale(1.02);
-}
-.card:hover:before{opacity:1}
-
-.card h3{margin-top:0}
-
-/* ================= TAGS ================= */
-.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.pill{
-  font-size:12px;
-  padding:6px 10px;
-  border-radius:8px;
-  background:rgba(255,255,255,.05);
-}
-
-/* ================= BADGES ================= */
-.badge{
-  padding:12px;
-  border-radius:999px;
-  text-align:center;
-  font-weight:700;
-  font-size:13px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.06);
-  transition:.3s;
-}
-.badge:hover{
-  transform:translateY(-6px);
-  box-shadow:0 0 30px var(--glow);
-}
-
-/* ================= FOOTER ================= */
-footer{
-  text-align:center;
-  margin-top:80px;
-  color:var(--muted);
-  font-size:14px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Chauhan | Big Data & Cloud Engineering Portfolio</title>
+    <meta name="description" content="Portfolio of Harsh Chauhan, Computer Science undergraduate specializing in Big Data & Cloud Engineering.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
+    <div id="noise"></div>
+    <div id="blob"></div>
+    
+    <nav>
+        <div class="logo">HC</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
 
-<nav>
-  <div class="brand">HARSH CHAUHAN</div>
-  <div class="navlinks">
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#certs">Certifications</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+    <header id="hero" class="fade-in">
+        <div class="hero-content">
+            <h2 class="subtitle">Computer Science Undergraduate</h2>
+            <h1 class="title">Hi, I'm <span class="highlight">Harsh Chauhan</span></h1>
+            <p class="description">Specializing in Big Data & Cloud Engineering with experience in software development, data analytics, and building scalable applications using Python and SQL.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn primary">View My Work</a>
+                <a href="#contact" class="btn secondary">Get In Touch</a>
+            </div>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/harsh-chauhan-0439a6307" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/lucifer11125" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:harshchauhan11125@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </header>
 
-<main class="wrap">
+    <main>
+        <section id="about" class="fade-in">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-container glass-card">
+                <div class="about-text">
+                    <p>I am a B.Tech Computer Science Engineering student (2023–2027) at MIT–ADT University, Pune, maintaining a CGPA of 8.45. I specialize in Big Data & Cloud Engineering, seeking roles in software, data, or cloud engineering where I can leverage my skills in turning data into actionable insights and creating robust applications.</p>
+                    <div class="education">
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <div class="edu-item">
+                            <h4>MIT–ADT University, Pune</h4>
+                            <span>B.Tech CSE - Big Data & Cloud Engineering (2023 – 2027) | CGPA: 8.45</span>
+                        </div>
+                        <div class="edu-item">
+                            <h4>Lokmanya Tilak Junior College</h4>
+                            <span>HSC (2023) - 79.50%</span>
+                        </div>
+                        <div class="edu-item">
+                            <h4>St. Aloysius High School</h4>
+                            <span>SSC (2021) - 85.40%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<header class="fade">
-  <h1>Harsh Chauhan</h1>
-  <p class="sub">
-    Entry-level <b>Data Analyst</b> specializing in <b>Power BI, SQL, Python & Excel</b>.
-    Experienced in analytics dashboards, customer segmentation, and data-driven decision making.
-  </p>
-</header>
+        <section id="experience" class="fade-in">
+            <h2 class="section-title">Experience & Achievements</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Data Science Engineer Intern</h3>
+                        <h4>Prodigy Infotech (Virtual) | Dec 2024 – Jan 2025</h4>
+                        <ul>
+                            <li>Cleaned and preprocessed 10K+ row datasets using Python (Pandas), resolving data quality issues including nulls and duplicates.</li>
+                            <li>Performed EDA to surface key trends, outliers, and business-critical anomalies.</li>
+                            <li>Built visual reports using Matplotlib and Excel, delivering 3 complete EDA reports within tight sprint timelines.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Academic Achievement</h3>
+                        <h4>IIM Bangalore Academic Summit</h4>
+                        <ul>
+                            <li>Research paper selected and presented at IIM Bangalore Academic Summit.</li>
+                            <li>Consistently ranked in the top academic tier of the batch with an 8.45/10 CGPA.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- ATS KEYWORDS (Hidden) -->
-<section style="opacity:0;height:0;overflow:hidden">
-Data Analyst, Business Intelligence, Power BI Analyst, SQL Analyst, KPI Dashboards,
-Customer Segmentation, Sales Analytics, Product Analytics, Data Visualization, EDA
-</section>
+        <section id="projects" class="fade-in">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card glass-card">
+                    <div class="project-content">
+                        <h3>IPL Historical Data Analytics Pipeline</h3>
+                        <p class="tech-stack">Python • BigQuery • Looker Studio • GCP</p>
+                        <ul>
+                            <li>Built an end-to-end ETL pipeline processing 500K+ match deliveries.</li>
+                            <li>Performed SQL analysis on BigQuery to extract team win trends and player insights.</li>
+                            <li>Developed an interactive Looker Studio dashboard enabling self-serve analytics.</li>
+                            <li>Deployed the full pipeline on GCP Free Tier.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-card glass-card">
+                    <div class="project-content">
+                        <h3>E-Commerce Sales Analytics Dashboard</h3>
+                        <p class="tech-stack">Python • Power BI • DAX</p>
+                        <ul>
+                            <li>Built an interactive Power BI dashboard analyzing sales trends and product performance.</li>
+                            <li>Designed KPIs, slicers, and drill-through visuals.</li>
+                            <li>Applied DAX measures for dynamic calculations across time periods.</li>
+                        </ul>
+                    </div>
+                </div>
 
-<!-- SKILLS -->
-<section id="skills" class="fade">
-<h2>Technical Skills</h2>
-<div class="grid skills">
+                <div class="project-card glass-card">
+                    <div class="project-content">
+                        <h3>Crowd-Source Civic Issue System</h3>
+                        <p class="tech-stack">Python • Flask • SQL • JavaScript</p>
+                        <ul>
+                            <li>Developed a full-stack web app enabling citizens to report and track civic issues.</li>
+                            <li>Designed SQL schema and reporting logic for issue categorization.</li>
+                            <li>Implemented REST API endpoints using Flask serving frontend dashboards.</li>
+                        </ul>
+                    </div>
+                </div>
 
-<div class="card">
-<h3>Programming & Analytics</h3>
-<div class="tools">
-<span class="pill">Python (Pandas, NumPy)</span>
-<span class="pill">C++</span>
-<span class="pill">Java</span>
-<span class="pill">SQL</span>
-</div>
-</div>
+                <div class="project-card glass-card">
+                    <div class="project-content">
+                        <h3>Health Data Management System</h3>
+                        <p class="tech-stack">Python • Excel • Kivy • KivyMD</p>
+                        <ul>
+                            <li>Cleaned and analyzed healthcare datasets; performed EDA to identify underserved regions.</li>
+                            <li>Automated data processing workflows, improving operational efficiency by 40%.</li>
+                            <li>Built a cross-platform desktop UI using Kivy/KivyMD for healthcare workers.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<div class="card">
-<h3>Data Analysis</h3>
-<div class="tools">
-<span class="pill">EDA</span>
-<span class="pill">Data Cleaning</span>
-<span class="pill">Descriptive Statistics</span>
-<span class="pill">Business Insights</span>
-<span class="pill">KPI Analysis</span>
-</div>
-</div>
+        <section id="skills" class="fade-in">
+            <h2 class="section-title">Technical Skills & Certifications</h2>
+            <div class="skills-container">
+                <div class="skill-category glass-card">
+                    <h3>Programming</h3>
+                    <div class="tags">
+                        <span>Python</span><span>Java</span><span>C++</span><span>SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3>Data & Analytics</h3>
+                    <div class="tags">
+                        <span>Pandas</span><span>NumPy</span><span>Power BI</span><span>Excel</span><span>Matplotlib</span><span>EDA</span><span>A/B Testing</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3>AI & ML</h3>
+                    <div class="tags">
+                        <span>Machine Learning</span><span>TensorFlow</span><span>Scikit-learn</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3>Cloud & Development</h3>
+                    <div class="tags">
+                        <span>MySQL</span><span>GCP</span><span>Docker</span><span>BigQuery</span><span>Git</span><span>Distributed Systems</span><span>REST APIs</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card certs">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li><i class="fas fa-certificate"></i> Accenture — Data Analytics & Visualization</li>
+                        <li><i class="fas fa-certificate"></i> IBM — Python for Data Science & AI</li>
+                        <li><i class="fas fa-certificate"></i> IBM — Exploratory Data Analysis for Machine Learning</li>
+                        <li><i class="fas fa-certificate"></i> Duke University — Cloud Data Engineering</li>
+                        <li><i class="fas fa-certificate"></i> Cisco — OS & Networking Basics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-<div class="card">
-<h3>Visualization & BI</h3>
-<div class="tools">
-<span class="pill">Power BI</span>
-<span class="pill">Excel</span>
-<span class="pill">Matplotlib</span>
-</div>
-</div>
+        <section id="contact" class="fade-in">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-card glass-card">
+                <p>I'm currently looking for new opportunities in software, data, or cloud engineering. Feel free to contact me for roles, collaborations, or just to say hi!</p>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Pune, India</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 7058887901</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:harshchauhan11125@gmail.com">harshchauhan11125@gmail.com</a>
+                    </div>
+                </div>
+                <a href="mailto:harshchauhan11125@gmail.com" class="btn primary mt-4">Say Hello</a>
+            </div>
+        </section>
+    </main>
 
-<div class="card">
-<h3>Databases</h3>
-<div class="tools">
-<span class="pill">MySQL</span>
-<span class="pill">Relational Databases</span>
-</div>
-</div>
+    <footer>
+        <p>&copy; 2026 Harsh Chauhan. Built with HTML, CSS & JS.</p>
+    </footer>
 
-<div class="card">
-<h3>Automation & ETL</h3>
-<div class="tools">
-<span class="pill">ETL Pipelines</span>
-<span class="pill">Data Pipelines</span>
-<span class="pill">Workflow Automation</span>
-</div>
-</div>
-
-<div class="card">
-<h3>AI & Machine Learning</h3>
-<div class="tools">
-<span class="pill">Machine Learning</span>
-<span class="pill">Scikit-learn</span>
-<span class="pill">Model-Ready Data</span>
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="fade">
-<h2>Projects</h2>
-<div class="grid projects">
-
-<div class="card">
-<h3>E-Commerce Sales Analytics Dashboard</h3>
-<p>Built a 3-page Power BI dashboard analyzing sales trends, customer segmentation, and product performance using KPIs and slicers.</p>
-<div class="tools">
-<span class="pill">Power BI</span>
-<span class="pill">DAX</span>
-<span class="pill">SQL</span>
-<span class="pill">Business Insights</span>
-</div>
-<p><a href="https://github.com/lucifer11125" target="_blank">View on GitHub →</a></p>
-</div>
-
-<div class="card">
-<h3>Civic Issue Reporting System</h3>
-<p>Developed a citizen-centric system for reporting civic issues with workflow automation and admin dashboards.</p>
-<div class="tools">
-<span class="pill">Python</span>
-<span class="pill">Flask</span>
-<span class="pill">SQL</span>
-</div>
-</div>
-
-<div class="card">
-<h3>Health Data Information Management System</h3>
-<p>Analyzed healthcare datasets to identify underserved regions and improved reporting efficiency by 40%.</p>
-<div class="tools">
-<span class="pill">Python</span>
-<span class="pill">Excel</span>
-<span class="pill">EDA</span>
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certs" class="fade">
-<h2>Certifications</h2>
-<div class="grid certs">
-<div class="badge">Accenture – Data Analytics & Visualization</div>
-<div class="badge">Simplilearn – Power BI</div>
-<div class="badge">IBM – Python for Data Science</div>
-<div class="badge">IBM – Exploratory Data Analysis</div>
-<div class="badge">IBM – Cloud Computing</div>
-<div class="badge">Duke University – Cloud Data Engineering</div>
-<div class="badge">Cisco – Networking Basics</div>
-</div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="fade">
-<h2>Contact</h2>
-<p>Email: <a href="mailto:harshchauhan11125@gmail.com">harshchauhan11125@gmail.com</a></p>
-<p>LinkedIn: <a href="https://linkedin.com/in/harsh-chauhan-0439a6307" target="_blank">View Profile</a></p>
-<p>GitHub: <a href="https://github.com/lucifer11125" target="_blank">View Projects</a></p>
-</section>
-
-<footer>© 2026 Harsh Chauhan · Data Analyst Portfolio</footer>
-
-</main>
-
-<script>
-const faders=document.querySelectorAll('.fade');
-const obs=new IntersectionObserver(e=>{
-  e.forEach(x=>{
-    if(x.isIntersecting){x.target.classList.add('show')}
-  })
-},{threshold:.15});
-faders.forEach(f=>obs.observe(f));
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
